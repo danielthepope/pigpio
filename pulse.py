@@ -10,6 +10,16 @@ GPIO.setup(red, GPIO.OUT)
 GPIO.setup(green, GPIO.OUT)
 GPIO.setup(blue, GPIO.OUT)
 
+def white(duration):
+        GPIO.output(red, True)
+        GPIO.output(green, True)
+        GPIO.output(blue, True)
+        sleep(duration)
+        GPIO.output(red, False)
+        GPIO.output(green, False)
+        GPIO.output(blue, False)
+
+        
 def multicolours(duration, r, g, b):
 	cycles = int(duration * 100)
 	ron = r / 100.0
