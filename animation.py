@@ -4,7 +4,6 @@ import RPi.GPIO as GPIO
 
 #Setting stuff up
 leds = [24, 23, 22, 21, 18, 17]
-_leds = [17, 18, 21, 22, 23, 24]
 buttons = [25, 4]
 
 sample = []
@@ -40,37 +39,6 @@ def allLeds(onOrOff):
     for pin in leds:
         GPIO.output(pin, onOrOff)
 
-def check():
-    for i in range(2):
-        allLeds(True)
-        sleep(0.1)
-        allLeds(False)
-        sleep(0.1)
-
-def setDelay():
-    start = time()
-    print "Setting delay"
-    while GPIO.input(buttons[1]) == 1:
-        sleep(0.05)
-        if time() - start > 2:
-            check()
-            print "Bye!"
-            exit(0)
-    newDelay = time() - start
-    print "New delay:", newDelay
-    return newDelay
-
-
-#This one works awesomely
-def push(array, time):
-    cycleTime = time / 12.0
-    for pin in array:
-        GPIO.output(pin, True)
-        sleep(cycleTime)
-    for pin in array:
-        GPIO.output(pin, False)
-        sleep(cycleTime)
-
 #Takes an array of tuples and sets each LED's brightness for a duration
 # [(17,0.5),(18,1),...]
 def varyBrightness(artup, duration):
@@ -87,26 +55,6 @@ def varyBrightness(artup, duration):
             sleep(delays[l])
         GPIO.output(artup[5][0], False)
         sleep((1-artup[-1][1]) / 100.0)
-    # for i in range(6):
-    #     if i == 5:
-    #         print artup[i] 
-    #     else:
-    #         print artup[i],delays[i]
-
-def go():
-    duration = 1
-
-    while True:
-        sleep(0.05)
-        #sleep(1)
-        #print "Button says", GPIO.input(button)
-        if GPIO.input(buttons[0]) == 1:
-            push(leds, duration)
-        elif GPIO.input(buttons[1]) == 1:
-            duration = setDelay()
-
-def bpm(beats):
-    return 1.0 / (beats / 60.0)
                         
 def animate(duration):
     frameTime = duration / float(len(sample))
@@ -115,6 +63,4 @@ def animate(duration):
         for step in sample:
             varyBrightness(step, frameTime)
 
-
-print "Hello!"
-check()
+animate(1)
