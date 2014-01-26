@@ -1,6 +1,13 @@
 #leds = [24, 23, 22, 21, 18, 17]
 symbol = {}
 
+symbol[' '] = []
+symbol[' '].append([[leds[0],0],[leds[1],0],[leds[2],0],[leds[3],0],[leds[4],0],[leds[5],0]])
+symbol[' '].append([[leds[0],0],[leds[1],0],[leds[2],0],[leds[3],0],[leds[4],0],[leds[5],0]])
+symbol[' '].append([[leds[0],0],[leds[1],0],[leds[2],0],[leds[3],0],[leds[4],0],[leds[5],0]])
+symbol[' '].append([[leds[0],0],[leds[1],0],[leds[2],0],[leds[3],0],[leds[4],0],[leds[5],0]])
+symbol[' '].append([[leds[0],0],[leds[1],0],[leds[2],0],[leds[3],0],[leds[4],0],[leds[5],0]])
+
 symbol['A'] = []
 symbol['A'].append([[leds[0],1],[leds[1],1],[leds[2],1],[leds[3],1],[leds[4],0],[leds[5],0]])
 symbol['A'].append([[leds[0],0],[leds[1],0],[leds[2],1],[leds[3],0],[leds[4],1],[leds[5],0]])
@@ -225,11 +232,11 @@ symbol['Z'].append([[leds[0],1],[leds[1],0],[leds[2],0],[leds[3],0],[leds[4],0],
 symbol['Z'].append([[leds[0],0],[leds[1],0],[leds[2],0],[leds[3],0],[leds[4],0],[leds[5],0]])
 symbol['Z'].append([[leds[0],0],[leds[1],0],[leds[2],0],[leds[3],0],[leds[4],0],[leds[5],0]])
 symbol['a'] = []
-symbol['a'].append([[leds[0],0],[leds[1],1],[leds[2],0],[leds[3],0],[leds[4],1],[leds[5],0]])
+symbol['a'].append([[leds[0],0],[leds[1],1],[leds[2],0],[leds[3],0],[leds[4],0],[leds[5],0]])
 symbol['a'].append([[leds[0],1],[leds[1],0],[leds[2],1],[leds[3],0],[leds[4],1],[leds[5],0]])
 symbol['a'].append([[leds[0],1],[leds[1],0],[leds[2],1],[leds[3],0],[leds[4],1],[leds[5],0]])
 symbol['a'].append([[leds[0],1],[leds[1],0],[leds[2],1],[leds[3],0],[leds[4],1],[leds[5],0]])
-symbol['a'].append([[leds[0],0],[leds[1],1],[leds[2],1],[leds[3],1],[leds[4],0],[leds[5],0]])
+symbol['a'].append([[leds[0],1],[leds[1],1],[leds[2],1],[leds[3],1],[leds[4],0],[leds[5],0]])
 symbol['a'].append([[leds[0],0],[leds[1],0],[leds[2],0],[leds[3],0],[leds[4],0],[leds[5],0]])
 symbol['a'].append([[leds[0],0],[leds[1],0],[leds[2],0],[leds[3],0],[leds[4],0],[leds[5],0]])
 symbol['b'] = []
@@ -263,17 +270,17 @@ symbol['e'].append([[leds[0],1],[leds[1],0],[leds[2],0],[leds[3],1],[leds[4],0],
 symbol['e'].append([[leds[0],0],[leds[1],0],[leds[2],0],[leds[3],0],[leds[4],0],[leds[5],0]])
 symbol['e'].append([[leds[0],0],[leds[1],0],[leds[2],0],[leds[3],0],[leds[4],0],[leds[5],0]])
 symbol['f'] = []
-symbol['f'].append([[leds[0],1],[leds[1],1],[leds[2],1],[leds[3],1],[leds[4],1],[leds[5],0]])
-symbol['f'].append([[leds[0],0],[leds[1],0],[leds[2],1],[leds[3],0],[leds[4],0],[leds[5],1]])
-symbol['f'].append([[leds[0],0],[leds[1],0],[leds[2],1],[leds[3],0],[leds[4],0],[leds[5],1]])
-symbol['f'].append([[leds[0],0],[leds[1],0],[leds[2],0],[leds[3],0],[leds[4],0],[leds[5],1]])
+symbol['f'].append([[leds[0],1],[leds[1],1],[leds[2],1],[leds[3],1],[leds[4],0],[leds[5],0]])
+symbol['f'].append([[leds[0],0],[leds[1],0],[leds[2],1],[leds[3],0],[leds[4],1],[leds[5],0]])
+symbol['f'].append([[leds[0],0],[leds[1],0],[leds[2],1],[leds[3],0],[leds[4],1],[leds[5],0]])
+symbol['f'].append([[leds[0],0],[leds[1],0],[leds[2],0],[leds[3],0],[leds[4],1],[leds[5],0]])
 symbol['f'].append([[leds[0],0],[leds[1],0],[leds[2],0],[leds[3],0],[leds[4],0],[leds[5],0]])
 symbol['f'].append([[leds[0],0],[leds[1],0],[leds[2],0],[leds[3],0],[leds[4],0],[leds[5],0]])
 symbol['g'] = []
-symbol['g'].append([[leds[0],1],[leds[1],0],[leds[2],0],[leds[3],1],[leds[4],1],[leds[5],0]])
-symbol['g'].append([[leds[0],1],[leds[1],0],[leds[2],1],[leds[3],0],[leds[4],0],[leds[5],1]])
-symbol['g'].append([[leds[0],1],[leds[1],0],[leds[2],1],[leds[3],0],[leds[4],0],[leds[5],1]])
-symbol['g'].append([[leds[0],0],[leds[1],1],[leds[2],1],[leds[3],1],[leds[4],1],[leds[5],1]])
+symbol['g'].append([[leds[0],1],[leds[1],0],[leds[2],0],[leds[3],1],[leds[4],0],[leds[5],0]])
+symbol['g'].append([[leds[0],1],[leds[1],0],[leds[2],1],[leds[3],0],[leds[4],1],[leds[5],0]])
+symbol['g'].append([[leds[0],1],[leds[1],0],[leds[2],1],[leds[3],0],[leds[4],1],[leds[5],0]])
+symbol['g'].append([[leds[0],0],[leds[1],1],[leds[2],1],[leds[3],1],[leds[4],1],[leds[5],0]])
 symbol['g'].append([[leds[0],0],[leds[1],0],[leds[2],0],[leds[3],0],[leds[4],0],[leds[5],0]])
 symbol['g'].append([[leds[0],0],[leds[1],0],[leds[2],0],[leds[3],0],[leds[4],0],[leds[5],0]])
 symbol['h'] = []
@@ -435,12 +442,12 @@ symbol['"'].append([[leds[0],0],[leds[1],0],[leds[2],0],[leds[3],0],[leds[4],1],
 symbol['"'].append([[leds[0],0],[leds[1],0],[leds[2],0],[leds[3],0],[leds[4],0],[leds[5],0]])
 symbol['"'].append([[leds[0],0],[leds[1],0],[leds[2],0],[leds[3],0],[leds[4],0],[leds[5],0]])
 symbol[':'] = []
-symbol[':'].append([[leds[0],0],[leds[1],1],[leds[2],0],[leds[3],1],[leds[4],0],[leds[5],0]])
+symbol[':'].append([[leds[0],0],[leds[1],1],[leds[2],0],[leds[3],0],[leds[4],1],[leds[5],0]])
 symbol[':'].append([[leds[0],0],[leds[1],0],[leds[2],0],[leds[3],0],[leds[4],0],[leds[5],0]])
 symbol[':'].append([[leds[0],0],[leds[1],0],[leds[2],0],[leds[3],0],[leds[4],0],[leds[5],0]])
 symbol[';'] = []
 symbol[';'].append([[leds[0],1],[leds[1],0],[leds[2],0],[leds[3],0],[leds[4],0],[leds[5],0]])
-symbol[';'].append([[leds[0],0],[leds[1],1],[leds[2],0],[leds[3],1],[leds[4],0],[leds[5],0]])
+symbol[';'].append([[leds[0],0],[leds[1],1],[leds[2],0],[leds[3],0],[leds[4],1],[leds[5],0]])
 symbol[';'].append([[leds[0],0],[leds[1],0],[leds[2],0],[leds[3],0],[leds[4],0],[leds[5],0]])
 symbol[';'].append([[leds[0],0],[leds[1],0],[leds[2],0],[leds[3],0],[leds[4],0],[leds[5],0]])
 symbol['.'] = []
@@ -567,9 +574,3 @@ symbol['>'].append([[leds[0],0],[leds[1],1],[leds[2],0],[leds[3],1],[leds[4],0],
 symbol['>'].append([[leds[0],0],[leds[1],0],[leds[2],1],[leds[3],0],[leds[4],0],[leds[5],0]])
 symbol['>'].append([[leds[0],0],[leds[1],0],[leds[2],0],[leds[3],0],[leds[4],0],[leds[5],0]])
 symbol['>'].append([[leds[0],0],[leds[1],0],[leds[2],0],[leds[3],0],[leds[4],0],[leds[5],0]])
-symbol[' '] = []
-symbol[' '].append([[leds[0],0],[leds[1],0],[leds[2],0],[leds[3],0],[leds[4],0],[leds[5],0]])
-symbol[' '].append([[leds[0],0],[leds[1],0],[leds[2],0],[leds[3],0],[leds[4],0],[leds[5],0]])
-symbol[' '].append([[leds[0],0],[leds[1],0],[leds[2],0],[leds[3],0],[leds[4],0],[leds[5],0]])
-symbol[' '].append([[leds[0],0],[leds[1],0],[leds[2],0],[leds[3],0],[leds[4],0],[leds[5],0]])
-symbol[' '].append([[leds[0],0],[leds[1],0],[leds[2],0],[leds[3],0],[leds[4],0],[leds[5],0]])
