@@ -70,4 +70,4 @@ else:
     sequence = ' '.join(argv[1:])
 
 sequence += "             "
-animate(sequence, len(sequence) * 0.1)
+animate(sequence, len(sequence) * 0.01)
