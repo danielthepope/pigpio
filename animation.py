@@ -13,6 +13,8 @@ argv = sys.argv
 
 animation = []
 
+test = [[18, 1], [17, 1], [21, 1], [22, 1], [23, 1], [24, 1]]
+
 sample = []
 sample.append([[leds[0],1],[leds[1],0],[leds[2],0],[leds[3],0],[leds[4],0],[leds[5],0]])
 sample.append([[leds[0],0.5],[leds[1],1],[leds[2],0],[leds[3],0],[leds[4],0],[leds[5],0]])
@@ -52,27 +54,33 @@ def allLeds(onOrOff):
 def varyBrightness(artup, duration):
     #sortedList = sorted(artup, key=lambda tup: tup[1])
     artup.sort(key=lambda tup: tup[1])
-    delays = [0,0,0,0,0]
+    delays = [0,0,0,0,0,0]
+    delays[0] = (artup[0][1]**2) / 100.0
     for i in range(5):
-        delays[i] = (artup[i+1][1]**2 - artup[i][1]**2) / 100.0
+        delays[i+1] = (artup[i+1][1]**2 - artup[i][1]**2) / 100.0
+    
     cycles = int(duration * 100)
     onLeds = []
     for i in range(cycles):
-        for l in range(6):
-            if artup[l][1] > 0:
-                GPIO.output(artup[l][0], True)
-        for l in range(5):
-            GPIO.output(artup[l][0], False)
-            sleep(delays[l])
-        GPIO.output(artup[5][0], False)
+        for j in range(6):
+            if artup[j][1] > 0:
+                GPIO.output(artup[j][0], True)
+        for j in range(6):
+            sleep(delays[j])
+            if artup[j][1] < 1:
+                GPIO.output(artup[j][0], False)
         sleep((1-artup[-1][1]) / 100.0)
                         
 def animate(sequence, duration):
     frameTime = duration / float(len(sequence))
     print 1.0 / frameTime, "fps"
-    while True:
-        for step in sequence:
-            varyBrightness(step, frameTime)
+    try:
+        while True:
+            for step in sequence:
+                varyBrightness(step, frameTime)
+    except:
+        print 'Bye.'
+        allLeds(False)
 
 if argc == 1:
     print 'Sample animation'
