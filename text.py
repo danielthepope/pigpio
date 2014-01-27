@@ -69,5 +69,5 @@ if argc == 1:
 else:
     sequence = ' '.join(argv[1:])
 
-sequence += "             "
+sequence += "                                                     "
 animate(sequence, len(sequence) * 0.01)

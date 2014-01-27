@@ -33,29 +33,6 @@ sample.append([[leds[0],0.5],[leds[1],0.2],[leds[2],0],[leds[3],0],[leds[4],0],[
 sample.append([[leds[0],0.2],[leds[1],0],[leds[2],0],[leds[3],0],[leds[4],0],[leds[5],0]])
 sample.append([[leds[0],0],[leds[1],0],[leds[2],0],[leds[3],0],[leds[4],0],[leds[5],0]])
 
-wave = []
-wave.append([[leds[0],0.5],[leds[1],0.6],[leds[2],0.7],[leds[3],0.8],[leds[4],0.9],[leds[5],1]])
-wave.append([[leds[0],0.4],[leds[1],0.5],[leds[2],0.6],[leds[3],0.7],[leds[4],0.8],[leds[5],0.9]])
-wave.append([[leds[0],0.3],[leds[1],0.4],[leds[2],0.5],[leds[3],0.6],[leds[4],0.7],[leds[5],0.8]])
-wave.append([[leds[0],0.2],[leds[1],0.3],[leds[2],0.4],[leds[3],0.5],[leds[4],0.6],[leds[5],0.7]])
-wave.append([[leds[0],0.1],[leds[1],0.2],[leds[2],0.3],[leds[3],0.4],[leds[4],0.5],[leds[5],0.6]])
-wave.append([[leds[0],0],[leds[1],0.1],[leds[2],0.2],[leds[3],0.3],[leds[4],0.4],[leds[5],0.5]])
-wave.append([[leds[0],0.1],[leds[1],0],[leds[2],0.1],[leds[3],0.2],[leds[4],0.3],[leds[5],0.4]])
-wave.append([[leds[0],0.2],[leds[1],0.1],[leds[2],0],[leds[3],0.1],[leds[4],0.2],[leds[5],0.3]])
-wave.append([[leds[0],0.3],[leds[1],0.2],[leds[2],0.1],[leds[3],0],[leds[4],0.1],[leds[5],0.2]])
-wave.append([[leds[0],0.4],[leds[1],0.3],[leds[2],0.2],[leds[3],0.1],[leds[4],0],[leds[5],0.1]])
-wave.append([[leds[0],0.5],[leds[1],0.4],[leds[2],0.3],[leds[3],0.2],[leds[4],0.1],[leds[5],0]])
-wave.append([[leds[0],0.6],[leds[1],0.5],[leds[2],0.4],[leds[3],0.3],[leds[4],0.2],[leds[5],0.1]])
-wave.append([[leds[0],0.7],[leds[1],0.6],[leds[2],0.5],[leds[3],0.4],[leds[4],0.3],[leds[5],0.2]])
-wave.append([[leds[0],0.8],[leds[1],0.7],[leds[2],0.6],[leds[3],0.5],[leds[4],0.4],[leds[5],0.3]])
-wave.append([[leds[0],0.9],[leds[1],0.8],[leds[2],0.7],[leds[3],0.6],[leds[4],0.5],[leds[5],0.4]])
-wave.append([[leds[0],1],[leds[1],0.9],[leds[2],0.8],[leds[3],0.7],[leds[4],0.6],[leds[5],0.5]])
-wave.append([[leds[0],0.9],[leds[1],1],[leds[2],0.9],[leds[3],0.8],[leds[4],0.7],[leds[5],0.6]])
-wave.append([[leds[0],0.8],[leds[1],0.9],[leds[2],1],[leds[3],0.9],[leds[4],0.8],[leds[5],0.7]])
-wave.append([[leds[0],0.7],[leds[1],0.8],[leds[2],0.9],[leds[3],1],[leds[4],0.9],[leds[5],0.8]])
-wave.append([[leds[0],0.6],[leds[1],0.7],[leds[2],0.8],[leds[3],0.9],[leds[4],1],[leds[5],0.9]])
-
-
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 
@@ -99,11 +76,11 @@ def animate(sequence, duration):
 
 if argc == 1:
     print 'Sample animation'
+    print "To load a different animation, type 'sudo python animation.py *.seq"
     animate(sample, 1)
 else:
     if argv[1].endswith('.seq'):
         animation = pickle.load(open(argv[1], "rb"))
         animate(animation, 1)
     else:
-        text = ' '.join(argv[1:])
-        print text
+        print "Please type a valid *.seq filename"
