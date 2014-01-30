@@ -53,16 +53,19 @@ def animate(sequence, duration):
         animation.extend(symbol[char])
     speed = 1
     frameTime = changeSpeed(animation, duration, speed)
-    while True:
-        for step in animation:
-            if GPIO.input(buttons[0]) == 1:
-                if speed == 1:
-                    speed = 0.1
-                else:
-                    speed = 1
-                frameTime = changeSpeed(animation, duration, speed)
-            varyBrightness(step, frameTime)
-        #sleep(1)
+    try:
+        while True:
+            for step in animation:
+                if GPIO.input(buttons[0]) == 1:
+                    if speed == 1:
+                        speed = 0.1
+                    else:
+                        speed = 1
+                    frameTime = changeSpeed(animation, duration, speed)
+                varyBrightness(step, frameTime)
+    except:
+        print 'Bye.'
+        allLeds(False)
 
 if argc == 1:
     sequence = 'HELLO'
